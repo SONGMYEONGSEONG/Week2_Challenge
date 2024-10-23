@@ -70,6 +70,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Challenge",
+            "id": "825f2b8c-f0f0-4fc4-bad4-dc010a0bf66d",
+            "actions": [
+                {
+                    "name": "Space",
+                    "type": "Button",
+                    "id": "f9141fa2-6d92-4823-9aa7-ee88d6ea8b1b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "7ad804b0-0912-4053-be8f-ae354e1cc490",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Space",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [
