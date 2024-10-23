@@ -10,20 +10,21 @@ public class Week2_OjbectPool_Q2 : Singleton<Week2_OjbectPool_Q2>
     private List<GameObject> pool;
     private Queue<GameObject> activePool; //활성화된 오브젝트를 저장하는 컨테이너 
     private const int minSize = 50;
-    private const int maxSize = 100;
+    private const int maxSize = 300;
 
     private GameObject container;
     private int poolSize = 0;
     void Awake()
     {
         container = new GameObject(prefab.name + "_Container");
+        pool = new List<GameObject>();
         activePool = new Queue<GameObject>();
         InitObjectPool();
     }
 
     private void InitObjectPool()
     {
-        pool = new List<GameObject>();
+      
         for (int i = 0; i < minSize; i++)
         {
             pool.Add(CreateObject());

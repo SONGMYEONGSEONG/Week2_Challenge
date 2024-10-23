@@ -16,13 +16,14 @@ public class Week2_OjbectPool_Q1 : Singleton<Week2_OjbectPool_Q1>
     void Awake()
     {
         container = new GameObject(prefab.name + "_Container");
+        pool = new List<GameObject>();
 
         InitObjectPool();
     }
 
     private void InitObjectPool()
     {
-        pool = new List<GameObject>();
+      
         for (int i = 0; i < minSize; i++)
         {
             pool.Add(CreateObject());
