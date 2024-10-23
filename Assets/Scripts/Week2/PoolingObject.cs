@@ -30,7 +30,7 @@ public class PoolingObject : MonoBehaviour
                     Week2_OjbectPool_Q3.Instance.ReleaseObject(this.gameObject);
                     break;
                 case ObjectPoolType.Q4:
-                    //Week2_OjbectPool_Q1.Instance.ReleaseObject(this.gameObject);
+                    Week2_OjbectPool_Q4.Instance.pool.Release(this.gameObject);
                     break;
             }
            
