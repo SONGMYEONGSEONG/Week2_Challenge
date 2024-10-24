@@ -1,7 +1,8 @@
 # Week2_Challenge
 SSC_Unity_6gen_InputSystem,GenericSingleton,ObjectPool
 
-**<Q1. Input Rebinding>**  
+---
+### **<Q1. Input Rebinding>**  
 ![Q1  Input Rebingding](https://github.com/user-attachments/assets/1c1049a3-7a8d-4c6e-9061-4d120fe7a241)
 ▲Input Rebinding gif  
 
@@ -14,8 +15,8 @@ Input System을 import 하고, `Input Action` Challenge를 구성하세요.
 **[구현 사항 3]**  
 `InputRebinder` 클래스의 `RebindSpaceToEscape` 함수는 **기존 Spacebar 키**를 입력하던 액션을 **Escape키를 입력했을 때 발생**하도록 합니다.  
   
-
-**<Q2. Generic Singleton>**
+---
+### **<Q2. Generic Singleton>**
 ![Q2  Generic Singleton](https://github.com/user-attachments/assets/bdd2dd28-a791-4838-bed9-b30c29a610c0)  
 ▲Generic Singleton gif  
 ![Q2  Generic Singleton](https://github.com/user-attachments/assets/ba1d003c-cd8d-4518-9c83-639f902a8a89)  
@@ -27,8 +28,9 @@ Instance 프로퍼티의 get 부분을 완성하세요. 이때 다양한 문제 
 `Singleton<T>`를 상속받는 컴포넌트를 포함한 게임오브젝트는 다른 씬으로 넘어가도 파괴되지 않게 하세요. 이때, 누군가의 자식일 때는 이에 대한 루트 컴포넌트 전체가 해당 특성이 적용되도록 하세요.  
 **[구현 사항 3]**   
 `Singleton<T>`를 상속받는 `AudioManager`를 처음부터 구현하세요. 간단한 bgm을 플레이하도록 하세요.  
-  
-**<Q3. Object Pool 끝장보기>**
+
+---
+### **<Q3. Object Pool 끝장보기>**
 ![image](https://github.com/user-attachments/assets/5fc7be59-6623-4b0a-ab0e-5f7fdc70dccf)
 
 원하는 오브젝트 풀을 활성화 시키고 키를 조작하면 오브젝트 풀이 동작합니다.
