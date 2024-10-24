@@ -54,7 +54,7 @@ public class Week2_OjbectPool_Q1 : Singleton<Week2_OjbectPool_Q1>
         pool.RemoveAt(0);
         Debug.Log($"오브젝트 Pool! 현재 오브젝트 갯수 : {pool.Count}");
         obj.SetActive(true);
-        obj.transform.position = transform.position;
+        obj.transform.position = transform.position + new Vector3(Random.Range(-5.0f, 5.0f), 0, 0);
 
         return obj;
     }

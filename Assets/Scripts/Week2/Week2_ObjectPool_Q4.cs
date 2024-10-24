@@ -10,59 +10,54 @@ public class Week2_OjbectPool_Q4 : Singleton<Week2_OjbectPool_Q4>
 {
     [SerializeField] private GameObject prefab;
     public ObjectPool<GameObject> pool;
+    private Queue<GameObject> activePool = new Queue<GameObject>();
 
     public bool collectionChecks = true;
     private const int minSize = 50;
     private const int maxSize = 300;
-    private Queue<GameObject> activePool; //활성화된 오브젝트를 저장하는 컨테이너 
 
     private GameObject container;
     void Awake()
     {
         container = new GameObject(prefab.name + "_Container");
-        activePool = new Queue<GameObject>();
+        pool = new ObjectPool<GameObject>(CreateObject, GetObject, ReleaseObject, DestroyObject, collectionChecks, minSize, maxSize);
 
-       pool = new ObjectPool<GameObject>(CreateObject, GetObject, ReleaseObject, DestroyObject, collectionChecks, minSize, maxSize);
-
+        for (int i =0; i <minSize; i++)
+        {
+            pool.Get();
+        }
         for (int i = 0; i < minSize; i++)
         {
-            GameObject obj = CreateObject();
-            activePool.Enqueue(obj);
-            pool.Release(obj);
+            pool.Release(activePool.Peek());
         }
 
-
-
-        Debug.Log($"오브젝트 초기 생성 : {pool.CountAll} 개");
     }
 
     private GameObject CreateObject()
     {
         // [요구스펙 1] Create Object
-
-        //Instantiate();
         GameObject obj = Instantiate(prefab, container.transform);
         return obj;
     }
 
     public void GetObject(GameObject obj)
     {
-        // [요구스펙 2] Get Object
-        if(pool.CountActive >= maxSize)
+        if(activePool.Count > maxSize)
         {
             pool.Release(activePool.Peek());
         }
 
+        // [요구스펙 2] Get Object
         obj.gameObject.SetActive(true);
         activePool.Enqueue(obj);
-        obj.transform.position = transform.position;
+        obj.transform.position = transform.position + new Vector3(Random.Range(-5.0f, 5.0f), 0,0);
     }
 
     public void ReleaseObject(GameObject obj)
     {
-        activePool.Dequeue();
         // [요구스펙 3] Release Object
         obj.gameObject.SetActive(false);
+        activePool.Dequeue();
     }
 
     public void DestroyObject(GameObject obj)
@@ -79,8 +74,6 @@ public class Week2_OjbectPool_Q4 : Singleton<Week2_OjbectPool_Q4>
             {
                 pool.Get();
             }
-
-            Debug.Log($"활성화된 오브젝트 갯수 : {pool.CountActive} 개");
         }
     }
 }
