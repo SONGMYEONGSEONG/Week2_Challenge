@@ -293,7 +293,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f1e375d4cb7a2c4683bd60ae8a14c63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 8310649245258342040, guid: 00d5def1cbdc51149af4e8d5d519de0d, type: 3}
+  prefab: {fileID: 8310649245258342040, guid: 3d620cd577bd4fc42af5aae72accac50, type: 3}
 --- !u!1 &176523477
 GameObject:
   m_ObjectHideFlags: 0
@@ -945,6 +945,37 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &570365982
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 570365983}
+  m_Layer: 0
+  m_Name: ====Week2====
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &570365983
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 570365982}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.5786499, y: 4.866211, z: 0.03205008}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1866,7 +1897,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a09e2a5496780394095916eceecb8ccf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 8310649245258342040, guid: 00d5def1cbdc51149af4e8d5d519de0d, type: 3}
+  prefab: {fileID: 8310649245258342040, guid: 224d60c688fccd944b71f02cb7212b8c, type: 3}
 --- !u!4 &1231124482
 Transform:
   m_ObjectHideFlags: 0
@@ -2014,7 +2045,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7da484a4dfc27d48a169248291dcd8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 8310649245258342040, guid: 00d5def1cbdc51149af4e8d5d519de0d, type: 3}
+  prefab: {fileID: 8310649245258342040, guid: 86506732368a28947976802fd1443e9b, type: 3}
   collectionChecks: 1
 --- !u!4 &1322001715
 Transform:
@@ -2837,6 +2868,7 @@ SceneRoots:
   - {fileID: 1289760077}
   - {fileID: 201587410}
   - {fileID: 793030951}
+  - {fileID: 570365983}
   - {fileID: 482889035}
   - {fileID: 1034736494}
   - {fileID: 1203909902}

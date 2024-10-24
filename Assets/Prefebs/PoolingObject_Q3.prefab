@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 9008797936143832573}
   - component: {fileID: -4970010546328239868}
   m_Layer: 0
-  m_Name: PoolingObject
+  m_Name: PoolingObject_Q3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 679ca1dae5e8b7148acd6bb9f898c8e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 3
+  type: 2
 --- !u!212 &8943256053941750778
 SpriteRenderer:
   m_ObjectHideFlags: 0

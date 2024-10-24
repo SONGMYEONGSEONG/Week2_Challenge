@@ -14,22 +14,26 @@ public class Week2_OjbectPool_Q4 : Singleton<Week2_OjbectPool_Q4>
     public bool collectionChecks = true;
     private const int minSize = 50;
     private const int maxSize = 300;
+    private Queue<GameObject> activePool; //활성화된 오브젝트를 저장하는 컨테이너 
 
     private GameObject container;
     void Awake()
     {
         container = new GameObject(prefab.name + "_Container");
+        activePool = new Queue<GameObject>();
 
-        /*
-        createFunc: 오브젝트 생성 함수 (Func)
-        actionOnGet: 풀에서 오브젝트를 가져오는 함수 (Action)
-        actionOnRelease: 오브젝트를 비활성화할 때 호출하는 함수 (Action)
-        actionOnDestroy: 오브젝트 파괴 함수 (Action)
-        collectionCheck: 중복 반환 체크 (bool)
-        defaultCapacity: 처음에 미리 생성하는 오브젝트 갯수 (int)
-        maxSize: 저장할 오브젝트의 최대 갯수 (int)
-         */
-        pool = new ObjectPool<GameObject>(CreateObject, GetObject, ReleaseObject, DestroyObject, collectionChecks, minSize, maxSize);
+       pool = new ObjectPool<GameObject>(CreateObject, GetObject, ReleaseObject, DestroyObject, collectionChecks, minSize, maxSize);
+
+        for (int i = 0; i < minSize; i++)
+        {
+            GameObject obj = CreateObject();
+            activePool.Enqueue(obj);
+            pool.Release(obj);
+        }
+
+
+
+        Debug.Log($"오브젝트 초기 생성 : {pool.CountAll} 개");
     }
 
     private GameObject CreateObject()
@@ -44,11 +48,19 @@ public class Week2_OjbectPool_Q4 : Singleton<Week2_OjbectPool_Q4>
     public void GetObject(GameObject obj)
     {
         // [요구스펙 2] Get Object
+        if(pool.CountActive >= maxSize)
+        {
+            pool.Release(activePool.Peek());
+        }
+
         obj.gameObject.SetActive(true);
+        activePool.Enqueue(obj);
+        obj.transform.position = transform.position;
     }
 
     public void ReleaseObject(GameObject obj)
     {
+        activePool.Dequeue();
         // [요구스펙 3] Release Object
         obj.gameObject.SetActive(false);
     }
@@ -67,6 +79,8 @@ public class Week2_OjbectPool_Q4 : Singleton<Week2_OjbectPool_Q4>
             {
                 pool.Get();
             }
+
+            Debug.Log($"활성화된 오브젝트 갯수 : {pool.CountActive} 개");
         }
     }
 }
